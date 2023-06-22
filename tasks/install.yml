@@ -1,0 +1,6 @@
+---
+- name: "Installing packages"
+  ansible.builtin.package:
+    name: "{{ dotbash_pkgs }}"
+    state: present
+  become: true
