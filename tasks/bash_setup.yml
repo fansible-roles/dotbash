@@ -1,0 +1,31 @@
+---
+# setup and configure bash
+- name: "Ensure bash directories exists"
+  ansible.builtin.file:
+    path: "{{ item.path }}/{{ item.name }}"
+    state: directory
+    owner: "{{ item.owner | default (__default_owner) }}"
+    group: "{{ item.group | default (__default_group) }}"
+    mode: "{{ item.mode | default ('0755') }}"
+  loop: "{{ bash_dirs }}"
+
+- name: "Installing bash files"
+  ansible.builtin.copy:
+    src: "{{ item }}/"
+    dest: "{{ install_root }}/.bash/{{ item }}/"
+    backup: true
+  loop: "{{ copy_files }}"
+
+- name: "Installing main bash file"
+  ansible.builtin.template:
+    src: "bash/bashrc.j2"
+    dest: "{{ install_root }}/.bash/bashrc"
+
+- name: "Creating the main bashrc include"
+  ansible.builtin.blockinfile:
+    path: "{{ install_root }}/.bashrc"
+    marker: "# {mark} - mrbrandao.dotbash main include"
+    create: true
+    block: |
+      source "{{ install_root }}/.bash/bashrc"
+    backup: true

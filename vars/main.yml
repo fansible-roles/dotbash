@@ -1,0 +1,4 @@
+---
+# vars file for dotbash
+__default_owner: "{{ ansible_facts.real_user_id }}"
+__default_group: "{{ ansible_facts.real_group_id }}"

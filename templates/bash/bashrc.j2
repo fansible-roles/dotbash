@@ -1,0 +1,21 @@
+# This file was created by mrbrandao.dotbash ansible role
+# any manual changes could be lost
+#
+# --- Custom Functions ---
+# a place to add your custom bash functions
+# will only load files ending with `-functions.bash`
+# e.g: myuser-functions.bash
+source {{ ansible_facts['env']['HOME'] }}/.bash/functions/*-functions.bash
+
+# --- Alias ---
+# a place to add your custom aliases will load only files ending with `-alias.bash`
+# e.g: myuser-alias.bash
+source {{ ansible_facts['env']['HOME'] }}/.bash/alias/*-alias.bash
+
+# --- AutoCompletion ---
+# a place to add you bash completions
+source {{ ansible_facts['env']['HOME'] }}/.bash/completions/*.bash
+
+# --- Custom ---
+# use the custom directory to add your custom settings
+source {{ ansible_facts['env']['HOME'] }}/.bash/custom/*.bash
