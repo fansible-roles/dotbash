@@ -13,7 +13,6 @@ alias emacs="emacs-nox"
 alias xc="xclip -selection clipboard"
 alias xp="xclip -o"
 alias moa="source ~/apps/mol/bin/activate"
-alias molecule="PY_COLORS=1;molecule"
 
 # k8s
 alias k="kubectl"

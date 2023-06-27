@@ -5,9 +5,11 @@ dotbash_pkgs:
   - vim
   - vim-X11
   - emacs-nox
-#
-# define the install bash path default $HOME
+
+# define the install bash path. default $HOME
 install_root: "{{ ansible_facts['env']['HOME'] }}"
+
+# define the bash files to be installed
 bash_dirs:
   - name: ".bash"
     path: "{{ install_root }}"
@@ -25,6 +27,7 @@ bash_dirs:
     path: "{{ install_root }}"
     desc: "creates the {{ install_root }}/.bash/custom directory"
 
+# the list of files to be copied
 copy_files:
   - "alias"
   - "completions"
