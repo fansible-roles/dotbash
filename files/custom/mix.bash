@@ -22,3 +22,6 @@ export EDITOR=vimx
 
 # enabling pycolors by default
 export PY_COLORS=1
+
+# fzf settings
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
