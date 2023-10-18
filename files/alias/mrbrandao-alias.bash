@@ -12,6 +12,12 @@ alias emacs="emacs-nox"
 alias xc="xclip -selection clipboard"
 alias xp="xclip -o"
 alias moa="source ~/apps/mol/bin/activate"
+alias grv="git remove -v"
+alias diff="diff --color"
+
+# toolbox
+alias tl="toolbox list"
+alias trm="toolbox rm -f"
 
 # k8s
 alias k="kubectl"
