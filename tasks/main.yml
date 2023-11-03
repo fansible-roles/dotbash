@@ -1,5 +1,8 @@
 ---
 # tasks file for dotbash
+- name: "Including Env Setup"
+  ansible.builtin.include_tasks: env_setup.yml
+
 - name: "Including Installation"
   ansible.builtin.include_tasks: install.yml
 

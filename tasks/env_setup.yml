@@ -1,0 +1,5 @@
+---
+# dotbash env setup
+- name: "gathering minimal environment facts"
+  ansible.builtin.setup:
+    gather_subset: "min"
