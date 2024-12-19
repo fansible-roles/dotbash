@@ -24,4 +24,5 @@ export EDITOR=vimx
 export PY_COLORS=1
 
 # fzf settings
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
+#export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
+export FZF_DEFAULT_OPTS="--height 2% --reverse -i --color 16 --inline-info"
